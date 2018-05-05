@@ -93,7 +93,7 @@ s=argONE*arg1+argTWO*arg2+argTHREE*arg3;
         	gbestNum=29000;
         }
         
-        for(int y=0;y<40;y++) {//迭代20次,每迭代一次更新每个粒子的状态
+        for(int y=0;y<40;y++) {//迭代40次,每迭代一次更新每个粒子的状态
         	 for(int i=0;i<ParticleNum;i++) {
              	
              	Solution.argONE=(int) x[i][0];
