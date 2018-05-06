@@ -15,8 +15,8 @@ s=argONE*arg1+argTWO*arg2+argTHREE*arg3;
 因为一开始是直接调参数，宿友比较厉害给直接手动调了出来，但是我就没那么幸运，只能一个一个修改，但是调了很久没有什么进展，有时还是会爆29000，于是只好利用简单循环来代替人工手动调参数，但是又有新的问题就是循环的效率太慢，大部分时间消耗在了计算上面，虽然有个好处是可以捕捉所有可能的点，但是大部分计算其实是无用功，在考虑现有的笔记本运行速度下并不是一个好的策略。  
 于是开始接触优化算法，采用了粒子群算法，就是模拟许多的粒子，通过当前速度，粒子自身最有位置和粒子群最有位置三个变量来调整粒子下一步要去的位置。这个优化方法考虑了自身以及其他粒子的相互影响，在实现上也相对容易理解，最终的目的是希望粒子能够往最优位置靠拢。  
 
-![此处输入图片的描述][1]
-![此处输入图片的描述][2]  
+ <img src="http://imglf3.nosdn.127.net/img/Z281REhERnhNZld6azZkam4wSUVFZTluNEpmZ25OUkNKT0ZZWDVuQy95QmM4QXUrdC9iRWJ3PT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0"  />   
+ <img src="http://imglf6.nosdn.127.net/img/Z281REhERnhNZld6azZkam4wSUVFVFJibytPRU9xS2Z1MS8yRndiZmY2d0pEdGMrU2E4UXpnPT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0"  />  
 但难点，一是粒子的初始速度和位置如何确定，一是对各个因子和系数的确定也是比较模糊，所以也是走了不少弯路。  
 综合了自己和舍友的一些想法，觉得影响因素最大的首先是solution里面的因子的确定以及正确性，例如曼哈顿距离和后续错误节点数量。其次才是各个因子前面的系数，所谓的优化算法本质其实也只是对系数进行调整而已，如果本身的因子在设立之初已经有误或者目的错误，那么即使利用再好的优化算法也可能是在错误的道路上越走越远。有一点点像数学建模，很多学生参加建模比赛，但是在选取数据以及影响因子的时候就已经出错，那么后面无论再怎么套用高级的数学模型，结果也可能是一张废纸。  
 ![此处输入图片的描述][3]  
@@ -146,6 +146,5 @@ s=argONE*arg1+argTWO*arg2+argTHREE*arg3;
       
 ```
 
-  [1]: http://imglf3.nosdn.127.net/img/Z281REhERnhNZld6azZkam4wSUVFZTluNEpmZ25OUkNKT0ZZWDVuQy95QmM4QXUrdC9iRWJ3PT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0
-  [2]: http://imglf6.nosdn.127.net/img/Z281REhERnhNZld6azZkam4wSUVFVFJibytPRU9xS2Z1MS8yRndiZmY2d0pEdGMrU2E4UXpnPT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0
+   
   [3]: http://imglf3.nosdn.127.net/img/Z281REhERnhNZlhtdG1NSnF0UVNocVk3QWk4d1FmajJtaFFNaDN3Q0I2Mk5jUnhaMk1UYjJRPT0.png?imageView&thumbnail=500x0&quality=96&stripmeta=0
